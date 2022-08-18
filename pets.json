@@ -1,1 +1,9 @@
-[{"age":7,"kind":"rainbow","name":"fido"},{"age":5,"kind":"snake","name":"Buttons"}]
+[{"age":1,"kind":"rainbow","name":"fido"},
+{"age":2,"kind":"rainbow","name":"fido"},
+{"age":3,"kind":"rainbow","name":"fido"},
+{"age":4,"kind":"rainbow","name":"fido"},
+{"age":5,"kind":"rainbow","name":"fido"},
+{"age":6,"kind":"rainbow","name":"fido"},
+{"age":7,"kind":"rainbow","name":"fido"},
+{"age":8,"kind":"rainbow","name":"fido"},
+{"age":9,"kind":"snake","name":"Buttons"}]
