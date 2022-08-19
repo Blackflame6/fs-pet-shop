@@ -53,3 +53,20 @@ server.on('request', (req, res)=> {
 server.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });
+
+
+// myLibrary = () => {
+//   const propsAndMethods = {
+//     name: 'Franklyn',
+//     math: function () {
+//      return 2 + 2
+//     },
+//     english: function () {
+//       console.log ("made a new function")
+//     }
+//   }
+//   return propsAndMethods
+// }
+
+// const showLib = myLibrary()
+// showLib.math()
