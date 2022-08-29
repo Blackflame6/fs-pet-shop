@@ -1,24 +1,65 @@
+const fs = require('fs')
 const express = require('express')
-
+const { json } = require('express')
 const app = express()
+const PORT = process.env.PORT || 9000
 
-const PORT = 8000
+ app.get('/pets', (req, res) => {
+   fs.readFile('pets.json', 'utf-8', (error, data) => {
+     if (error) {
+       console.log(error)
+      }
+      const objData = JSON.parse(data)
+      res.status(200).send(objData)
+    })
+  
+  })
 
-app.get('/test', (req, res)  => {
- 
-  res.send('get test page working')
+
+app.get('/pets/:id', (req, res) => {
+  id = req.params.id
+  console.log(id)
+
+
+
+  fs.readFile('pets.json', 'utf-8', (error, data) => {
+
+    if (error) {
+      console.log(error)
+    }
+    const objData = JSON.parse(data)
+  
+
+    res.status(200).send(objData[id])
+  })
+  const pet = req.url.split('/')
+  const lastIndex = pet[pet.length-1]
+  const parsedIndex = JSON.stringify(lastIndex)
+
+
+console.log(parsedIndex.length)
+if (id >= parsedIndex.length - 1) {
+  res.status(404).send(`Error 404! Input ${parsedIndex} too large, please go lower.`)
+ } else if (id < parsedIndex.length- 3) {
+  res.status(404).send(`Error 404! Input ${parsedIndex} too small, please go higher.`)
+
+ }
 })
 
-app.get('/', (req, res) => {
-  res.send('get home page working')
-})
-app.post('/test', (req, res) => {
-  res.send('post test page working')
-}) 
-app.post('/', (req, res) => {
-
-res.send('post home page working')
-})
-app.listen (PORT, () => {
+app.listen(PORT,()=> {
   console.log(`Listening on Port: ${PORT}`)
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+

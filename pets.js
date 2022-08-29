@@ -24,6 +24,7 @@ if (command === "read" && !index ) {
   });
 } 
 
+
   if (command === 'read' && index ) {
     fs.readFile('pets.json', 'utf-8', (error, data)  => {
       if(error) {
