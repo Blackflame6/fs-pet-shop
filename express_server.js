@@ -18,10 +18,6 @@ const PORT = process.env.PORT || 9000
 
 app.get('/pets/:id', (req, res) => {
   id = req.params.id
-  console.log(id)
-
-
-
   fs.readFile('pets.json', 'utf-8', (error, data) => {
 
     if (error) {
